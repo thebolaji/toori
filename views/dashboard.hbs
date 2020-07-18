@@ -1,0 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<div class="create">
+  <h1 id="h1">Welcome back {{name}}</h1>
+  {{!-- <p style="display: block; text-align:left; width:90%">here is your dashboard</p> --}}
+  <a href="/create" id="newStory"> Create New</a>
+</div>
+<div id="tableLon">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each stories}}
+        <tr>
+          <td><a href="/story/{{_id}}">{{title}}</a></td>
+          <td>{{formatDate createdAt 'MMM Do YYYY, h:mm:ss a'}}</td>
+          <td>{{category}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

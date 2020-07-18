@@ -1,0 +1,23 @@
+<div id="storyForm">
+    <div class="section-form">
+        <form action="/" method="POST">
+            <div class="intro">
+                <h2>Get your project started today {{name}}</h2>
+            </div>
+            <input type="text" value="" placeholder="Comic Title" name="title" tabindex="1" />
+            <label for="category">Select Category</label>
+            <select name="category" id="title" tabindex="2">
+                <option value="Romantic">Romantic</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Folktale"> Folktale</option>
+                <option value="Spy fiction">Spy fiction </option>
+                <option value="Travel">Travel</option>
+            </select>
+            <label for="file">Upload (powerpoint, mp4)</label>
+            <input type="file" name="file" id="upload" tabindex="3">
+            {{!-- <input type="text" value="" placeholder="Budget" name="budget" tabindex="2" /> --}}
+            <textarea placeholder="Description" name="description" tabindex="4" rows="10"></textarea>
+            <input type="submit" value="Publish" tabindex="5" />
+        </form>
+    </div>
+</div>
