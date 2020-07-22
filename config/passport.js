@@ -1,13 +1,14 @@
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const mongoose = require("mongoose");
-const User = require("../model/Users");
-module.exports = function (passport) {
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const mongoose = require('mongoose');
+const User = require('../model/Users');
+
+module.exports = (passport) => {
   passport.use(
     new GoogleStrategy(
       {
         clientID: process.env.GOOGLE_ID,
         clientSecret: process.env.GOOGLE_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/google/callback",
+        callbackURL: 'http://127.0.0.1:3000/auth/google/callback',
       },
       async (accessToken, refreshToken, profile, cb) => {
         const newUsers = {
@@ -26,13 +27,13 @@ module.exports = function (passport) {
             cb(null, user);
           }
         } catch (error) {
-          console.error(error);
+          cb(null, error);
         }
         /* User.findOrCreate({ googleId: profile.id }, function (err, user) {
           return cb(err, user);
         }); */
-      }
-    )
+      },
+    ),
   );
 
   passport.serializeUser((user, done) => {
@@ -40,7 +41,7 @@ module.exports = function (passport) {
   });
 
   passport.deserializeUser((id, done) => {
-    User.findById(id, function (err, user) {
+    User.findById(id, (err, user) => {
       done(err, user);
     });
   });

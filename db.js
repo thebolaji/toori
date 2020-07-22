@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 // Database
 const connectDB = async () => {
@@ -7,7 +7,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Database connected...............");
+    console.log('Database connected...............');
   } catch (error) {
     console.log(error);
   }

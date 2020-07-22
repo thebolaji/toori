@@ -1,6 +1,7 @@
-const moment = require("moment");
+const moment = require('moment');
+
 module.exports = {
-  formatDate: function (date, format) {
+  formatDate(date, format) {
     return moment(date).format(format);
   },
 };

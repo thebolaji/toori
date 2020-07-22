@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "lint": "eslint --fix --ext .js,.jsx ."
   },
   "author": "BigB",
   "license": "MIT",
@@ -24,6 +25,9 @@
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "nodemon": "^2.0.4"
   }
 }
